@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800D2DB92293B60D00079DEC /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */; };
+		800D2DBA2293B60D00079DEC /* ZillaSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */; };
+		800D2DBB2293B60D00079DEC /* ZillaSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB52293B60D00079DEC /* ZillaSlab-Bold.ttf */; };
+		800D2DBC2293B60D00079DEC /* CreteRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB62293B60D00079DEC /* CreteRound-Regular.ttf */; };
+		800D2DBD2293B60D00079DEC /* ZillaSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB72293B60D00079DEC /* ZillaSlab-Regular.ttf */; };
+		800D2DBE2293B60D00079DEC /* ZillaSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB82293B60D00079DEC /* ZillaSlab-Medium.ttf */; };
+		800D2DC02293BD7200079DEC /* FirstPhaseRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D2DBF2293BD7200079DEC /* FirstPhaseRoomController.swift */; };
+		800D2DC22293C15B00079DEC /* SecondPhaseRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D2DC12293C15B00079DEC /* SecondPhaseRoomController.swift */; };
+		800D2DC42293C16C00079DEC /* ThirdPhaseRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D2DC32293C16C00079DEC /* ThirdPhaseRoomController.swift */; };
+		800D2DC62293C1A400079DEC /* WriteTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D2DC52293C1A400079DEC /* WriteTextController.swift */; };
+		800D2DC82293C1B100079DEC /* GradeTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D2DC72293C1B100079DEC /* GradeTextController.swift */; };
+		800D2DCA2293D55600079DEC /* HorizontalPanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D2DC92293D55600079DEC /* HorizontalPanner.swift */; };
 		AC0B983E2290F491008E8FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B983D2290F491008E8FCE /* AppDelegate.swift */; };
 		AC0B98402290F491008E8FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B983F2290F491008E8FCE /* ViewController.swift */; };
 		AC0B98432290F491008E8FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0B98412290F491008E8FCE /* Main.storyboard */; };
@@ -16,13 +28,23 @@
 		ACF3BF2F2290F5E3002899D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF282290F5E2002899D7 /* LoginViewController.swift */; };
 		ACF3BF302290F5E3002899D7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF292290F5E2002899D7 /* UserViewController.swift */; };
 		ACF3BF312290F5E3002899D7 /* UserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */; };
-		ACF3BF322290F5E3002899D7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2B2290F5E2002899D7 /* LoginView.swift */; };
 		ACF3BF332290F5E3002899D7 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */; };
 		ACF3BF342290F5E3002899D7 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2D2290F5E2002899D7 /* System.swift */; };
-		ACF3BF362290F608002899D7 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = ACF3BF352290F608002899D7 /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Righteous-Regular.ttf"; path = "Fonts/Righteous-Regular.ttf"; sourceTree = "<group>"; };
+		800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-SemiBold.ttf"; path = "Fonts/ZillaSlab-SemiBold.ttf"; sourceTree = "<group>"; };
+		800D2DB52293B60D00079DEC /* ZillaSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-Bold.ttf"; path = "Fonts/ZillaSlab-Bold.ttf"; sourceTree = "<group>"; };
+		800D2DB62293B60D00079DEC /* CreteRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CreteRound-Regular.ttf"; path = "Fonts/CreteRound-Regular.ttf"; sourceTree = "<group>"; };
+		800D2DB72293B60D00079DEC /* ZillaSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-Regular.ttf"; path = "Fonts/ZillaSlab-Regular.ttf"; sourceTree = "<group>"; };
+		800D2DB82293B60D00079DEC /* ZillaSlab-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-Medium.ttf"; path = "Fonts/ZillaSlab-Medium.ttf"; sourceTree = "<group>"; };
+		800D2DBF2293BD7200079DEC /* FirstPhaseRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPhaseRoomController.swift; sourceTree = "<group>"; };
+		800D2DC12293C15B00079DEC /* SecondPhaseRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhaseRoomController.swift; sourceTree = "<group>"; };
+		800D2DC32293C16C00079DEC /* ThirdPhaseRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPhaseRoomController.swift; sourceTree = "<group>"; };
+		800D2DC52293C1A400079DEC /* WriteTextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextController.swift; sourceTree = "<group>"; };
+		800D2DC72293C1B100079DEC /* GradeTextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeTextController.swift; sourceTree = "<group>"; };
+		800D2DC92293D55600079DEC /* HorizontalPanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPanner.swift; sourceTree = "<group>"; };
 		AC0B983A2290F491008E8FCE /* agora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0B983D2290F491008E8FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC0B983F2290F491008E8FCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,10 +56,8 @@
 		ACF3BF282290F5E2002899D7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACF3BF292290F5E2002899D7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavigationController.swift; sourceTree = "<group>"; };
-		ACF3BF2B2290F5E2002899D7 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		ACF3BF2D2290F5E2002899D7 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
-		ACF3BF352290F608002899D7 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,20 +90,30 @@
 		AC0B983C2290F491008E8FCE /* agora */ = {
 			isa = PBXGroup;
 			children = (
-				ACF3BF352290F608002899D7 /* Fonts */,
+				800D2DB62293B60D00079DEC /* CreteRound-Regular.ttf */,
+				800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */,
+				800D2DB52293B60D00079DEC /* ZillaSlab-Bold.ttf */,
+				800D2DB82293B60D00079DEC /* ZillaSlab-Medium.ttf */,
+				800D2DB72293B60D00079DEC /* ZillaSlab-Regular.ttf */,
+				800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */,
 				AC0B983D2290F491008E8FCE /* AppDelegate.swift */,
 				AC0B983F2290F491008E8FCE /* ViewController.swift */,
 				AC0B98412290F491008E8FCE /* Main.storyboard */,
 				AC0B98442290F494008E8FCE /* Assets.xcassets */,
 				AC0B98462290F494008E8FCE /* LaunchScreen.storyboard */,
-				ACF3BF2B2290F5E2002899D7 /* LoginView.swift */,
 				ACF3BF282290F5E2002899D7 /* LoginViewController.swift */,
 				ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */,
 				ACF3BF272290F5E2002899D7 /* SignupViewController.swift */,
 				ACF3BF2D2290F5E2002899D7 /* System.swift */,
 				ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */,
 				ACF3BF292290F5E2002899D7 /* UserViewController.swift */,
+				800D2DBF2293BD7200079DEC /* FirstPhaseRoomController.swift */,
+				800D2DC12293C15B00079DEC /* SecondPhaseRoomController.swift */,
+				800D2DC32293C16C00079DEC /* ThirdPhaseRoomController.swift */,
 				AC0B98492290F494008E8FCE /* Info.plist */,
+				800D2DC52293C1A400079DEC /* WriteTextController.swift */,
+				800D2DC72293C1B100079DEC /* GradeTextController.swift */,
+				800D2DC92293D55600079DEC /* HorizontalPanner.swift */,
 			);
 			path = agora;
 			sourceTree = "<group>";
@@ -148,8 +178,13 @@
 			files = (
 				AC0B98482290F494008E8FCE /* LaunchScreen.storyboard in Resources */,
 				AC0B98452290F494008E8FCE /* Assets.xcassets in Resources */,
+				800D2DBE2293B60D00079DEC /* ZillaSlab-Medium.ttf in Resources */,
+				800D2DBA2293B60D00079DEC /* ZillaSlab-SemiBold.ttf in Resources */,
+				800D2DBD2293B60D00079DEC /* ZillaSlab-Regular.ttf in Resources */,
+				800D2DB92293B60D00079DEC /* Righteous-Regular.ttf in Resources */,
+				800D2DBC2293B60D00079DEC /* CreteRound-Regular.ttf in Resources */,
 				AC0B98432290F491008E8FCE /* Main.storyboard in Resources */,
-				ACF3BF362290F608002899D7 /* Fonts in Resources */,
+				800D2DBB2293B60D00079DEC /* ZillaSlab-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,14 +195,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800D2DC62293C1A400079DEC /* WriteTextController.swift in Sources */,
 				ACF3BF2F2290F5E3002899D7 /* LoginViewController.swift in Sources */,
-				ACF3BF322290F5E3002899D7 /* LoginView.swift in Sources */,
 				ACF3BF332290F5E3002899D7 /* MainNavigationController.swift in Sources */,
+				800D2DC22293C15B00079DEC /* SecondPhaseRoomController.swift in Sources */,
 				ACF3BF302290F5E3002899D7 /* UserViewController.swift in Sources */,
+				800D2DCA2293D55600079DEC /* HorizontalPanner.swift in Sources */,
+				800D2DC42293C16C00079DEC /* ThirdPhaseRoomController.swift in Sources */,
 				ACF3BF312290F5E3002899D7 /* UserNavigationController.swift in Sources */,
 				ACF3BF2E2290F5E3002899D7 /* SignupViewController.swift in Sources */,
 				AC0B98402290F491008E8FCE /* ViewController.swift in Sources */,
+				800D2DC82293C1B100079DEC /* GradeTextController.swift in Sources */,
 				ACF3BF342290F5E3002899D7 /* System.swift in Sources */,
+				800D2DC02293BD7200079DEC /* FirstPhaseRoomController.swift in Sources */,
 				AC0B983E2290F491008E8FCE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
