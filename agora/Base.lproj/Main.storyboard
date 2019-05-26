@@ -733,10 +733,10 @@
             </objects>
             <point key="canvasLocation" x="-239.19999999999999" y="447.52623688155927"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Room View Controller-->
         <scene sceneID="G72-hm-lkA">
             <objects>
-                <viewController id="zQb-XP-iUd" sceneMemberID="viewController">
+                <viewController id="zQb-XP-iUd" customClass="CreateRoomViewController" customModule="agora" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z2I-Au-4rT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -752,7 +752,6 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="40"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -778,6 +777,9 @@
                                 <state key="normal" title="VOLTAR">
                                     <color key="titleColor" red="0.13725490196078433" green="0.11764705882352941" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="backClick:" destination="zQb-XP-iUd" eventType="touchUpInside" id="bXF-fR-wRV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl2-kG-Kcx">
                                 <rect key="frame" x="0.0" y="483" width="375" height="99"/>
