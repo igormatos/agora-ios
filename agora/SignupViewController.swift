@@ -20,4 +20,9 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func clickedOnReturn(_ textField: UITextField) {
+        textField.resignFirstResponder() // Dismiss the keyboard
+
+    }
 }
