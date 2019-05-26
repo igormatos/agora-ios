@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FC810D0229B11AD00AEAE1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */; };
+		6EF70EA50A6835C9B9A84588 /* Pods_agora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */; };
 		800D2DB92293B60D00079DEC /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */; };
 		800D2DBA2293B60D00079DEC /* ZillaSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */; };
 		800D2DBB2293B60D00079DEC /* ZillaSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB52293B60D00079DEC /* ZillaSlab-Bold.ttf */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Righteous-Regular.ttf"; path = "Fonts/Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-SemiBold.ttf"; path = "Fonts/ZillaSlab-SemiBold.ttf"; sourceTree = "<group>"; };
 		800D2DB52293B60D00079DEC /* ZillaSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-Bold.ttf"; path = "Fonts/ZillaSlab-Bold.ttf"; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavigationController.swift; sourceTree = "<group>"; };
 		ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		ACF3BF2D2290F5E2002899D7 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		DCB0283DC11BB40817358C1C /* Pods-agora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agora.debug.xcconfig"; path = "Pods/Target Support Files/Pods-agora/Pods-agora.debug.xcconfig"; sourceTree = "<group>"; };
+		FA7F0471CA15B350D4DDA445 /* Pods-agora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agora.release.xcconfig"; path = "Pods/Target Support Files/Pods-agora/Pods-agora.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,17 +71,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF70EA50A6835C9B9A84588 /* Pods_agora.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3516890DF6E1B04171B727B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCB0283DC11BB40817358C1C /* Pods-agora.debug.xcconfig */,
+				FA7F0471CA15B350D4DDA445 /* Pods-agora.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AC0B98312290F491008E8FCE = {
 			isa = PBXGroup;
 			children = (
 				AC0B983C2290F491008E8FCE /* agora */,
 				AC0B983B2290F491008E8FCE /* Products */,
+				3516890DF6E1B04171B727B5 /* Pods */,
+				CDEC995DEEBED7999FD9876D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,8 +132,17 @@
 				800D2DC52293C1A400079DEC /* WriteTextController.swift */,
 				800D2DC72293C1B100079DEC /* GradeTextController.swift */,
 				800D2DC92293D55600079DEC /* HorizontalPanner.swift */,
+				4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */,
 			);
 			path = agora;
+			sourceTree = "<group>";
+		};
+		CDEC995DEEBED7999FD9876D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC0B984C2290F494008E8FCE /* Build configuration list for PBXNativeTarget "agora" */;
 			buildPhases = (
+				674CDCEE059B292400332E38 /* [CP] Check Pods Manifest.lock */,
 				AC0B98362290F491008E8FCE /* Sources */,
 				AC0B98372290F491008E8FCE /* Frameworks */,
 				AC0B98382290F491008E8FCE /* Resources */,
+				01DC10540AFC888008A55C0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,12 +212,62 @@
 				800D2DBD2293B60D00079DEC /* ZillaSlab-Regular.ttf in Resources */,
 				800D2DB92293B60D00079DEC /* Righteous-Regular.ttf in Resources */,
 				800D2DBC2293B60D00079DEC /* CreteRound-Regular.ttf in Resources */,
+				4FC810D0229B11AD00AEAE1A /* GoogleService-Info.plist in Resources */,
 				AC0B98432290F491008E8FCE /* Main.storyboard in Resources */,
 				800D2DBB2293B60D00079DEC /* ZillaSlab-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01DC10540AFC888008A55C0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-agora/Pods-agora-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-agora/Pods-agora-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		674CDCEE059B292400332E38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-agora-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC0B98362290F491008E8FCE /* Sources */ = {
@@ -352,6 +431,7 @@
 		};
 		AC0B984D2290F494008E8FCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB0283DC11BB40817358C1C /* Pods-agora.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -369,6 +449,7 @@
 		};
 		AC0B984E2290F494008E8FCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA7F0471CA15B350D4DDA445 /* Pods-agora.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
