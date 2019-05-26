@@ -1,31 +1,33 @@
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: AgoraViewController {
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    
+    var authHandle: AuthStateDidChangeListenerHandle?
+    
     
     @IBAction func createAccount(_ sender: Any) {
         performSegue(withIdentifier: "signupsegue", sender: self)
     }
     
     @IBAction func login(_ sender: Any) {
-        // [FINAL] go RED and display message if login is incorrect
         doLogin()
     }
        
     func doLogin() {
-        guard let username = usernameField.text, let password = passwordField.text else {
+        guard let email = usernameField.text, let password = passwordField.text else {
             showAlert(title: "Preencha todos campos", message: "Verifique se todos campos foram escritos")
             return
         }
         
-        guard let userInDatabase = users[username], userInDatabase.password == password else {
-            showAlert(title: "Dados incorretos", message: "Verifique as informações")
-            return
+        Auth.auth().signIn(withEmail: email, password: password) { (auth, error) in
+            if let errorMessage = error {
+                self.showAlert(title: "Falha no login", message: errorMessage.localizedDescription)
+                return
+            }
         }
-        
-        activeUser = username
-        performSegue(withIdentifier: "loggedinsegue", sender: self)
     }
     
     override func viewDidLoad() {
@@ -33,6 +35,21 @@ class LoginViewController: AgoraViewController {
         
         usernameField.delegate = self
         passwordField.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        authHandle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            guard let user = user else { return }
+            
+            loggedUser = user
+
+            self.performSegue(withIdentifier: "loggedinsegue", sender: self)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(authHandle!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
