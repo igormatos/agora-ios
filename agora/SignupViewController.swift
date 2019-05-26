@@ -1,6 +1,6 @@
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: AgoraViewController {
     @IBOutlet var handle: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var email: UITextField!
@@ -9,11 +9,15 @@ class SignupViewController: UIViewController {
         // [FINAL] Flash red and specify error on failure
         // [FINAL] Validate all fields
         // [FINAL] Never overwrite users!!!
-        guard let handle = handle.text else {return}
-        guard let password = password.text else {return}
-        guard let email = email.text else {return}
+        guard let username = handle.text,
+            let password = password.text,
+            let email = email.text else {
+                
+            showAlert(title: "Algum campo está vázio", message: "Preencha todos campos")
+            return
+        }
         
-        users[handle] = User(handle: handle, password: password, email: email)
+        users[username] = User(handle: username, password: password, email: email)
         navigationController!.popViewController(animated: true)
     }
     
