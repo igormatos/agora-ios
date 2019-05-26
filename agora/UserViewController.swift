@@ -41,4 +41,7 @@ class UserViewController: UIViewController {
             room.code = code.text!
         }
     }
+    @IBAction func clickOnReturn(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
 }
