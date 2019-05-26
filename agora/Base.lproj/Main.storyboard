@@ -38,6 +38,9 @@
                                                 <color key="textColor" red="0.99790614840000003" green="0.95926529169999997" blue="0.84704005719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <connections>
+                                                    <action selector="clickedOnReturn:" destination="W16-SE-jNh" eventType="editingDidEndOnExit" id="raK-Kf-ZBT"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,6 +60,9 @@
                                                 <color key="textColor" red="0.13669624920000001" green="0.1181580052" blue="0.094113074239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <connections>
+                                                    <action selector="clickedOnReturn:" destination="W16-SE-jNh" eventType="editingDidEndOnExit" id="X6D-In-wro"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99790614840000003" green="0.95926529169999997" blue="0.84704005719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -76,6 +82,9 @@
                                                 <color key="textColor" red="0.99790614840000003" green="0.95926529169999997" blue="0.84704005719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <connections>
+                                                    <action selector="clickedOnReturn:" destination="W16-SE-jNh" eventType="editingDidEndOnExit" id="ZGZ-gx-cdR"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
