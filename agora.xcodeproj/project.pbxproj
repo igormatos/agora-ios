@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4FC810D0229B11AD00AEAE1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */; };
 		4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BD229B163400381229 /* AgoraViewController.swift */; };
+		4FE086C0229B22F400381229 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BF229B22F400381229 /* CreateRoomViewController.swift */; };
 		6EF70EA50A6835C9B9A84588 /* Pods_agora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */; };
 		800D2DB92293B60D00079DEC /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */; };
 		800D2DBA2293B60D00079DEC /* ZillaSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FE086BD229B163400381229 /* AgoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraViewController.swift; sourceTree = "<group>"; };
+		4FE086BF229B22F400381229 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Righteous-Regular.ttf"; path = "Fonts/Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-SemiBold.ttf"; path = "Fonts/ZillaSlab-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				800D2DC92293D55600079DEC /* HorizontalPanner.swift */,
 				4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */,
 				4FE086BD229B163400381229 /* AgoraViewController.swift */,
+				4FE086BF229B22F400381229 /* CreateRoomViewController.swift */,
 			);
 			path = agora;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				800D2DC42293C16C00079DEC /* ThirdPhaseRoomController.swift in Sources */,
 				ACF3BF312290F5E3002899D7 /* UserNavigationController.swift in Sources */,
 				ACF3BF2E2290F5E3002899D7 /* SignupViewController.swift in Sources */,
+				4FE086C0229B22F400381229 /* CreateRoomViewController.swift in Sources */,
 				AC0B98402290F491008E8FCE /* ViewController.swift in Sources */,
 				800D2DC82293C1B100079DEC /* GradeTextController.swift in Sources */,
 				ACF3BF342290F5E3002899D7 /* System.swift in Sources */,
