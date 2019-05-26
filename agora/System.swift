@@ -1,13 +1,14 @@
 import Foundation
-
+import FirebaseAuth
 
 enum Phase {
     case justJoined, writing, mayGrade, grading, debate
 }
 
 var activeUser: String?
+var loggedUser: User?
 
-var users: [String: User] = ["tcm": User(handle: "tcm", password: "abc", email: "tcm@gmail.com")]
+//var users: [String: User] = ["tcm": User(handle: "tcm", password: "abc", email: "tcm@gmail.com")]
 
 let sampleTheme = "Should a second referendum be held for Brexit?"
 let sampleHotTake = "the implications for the north/south Irish border and Northern Ireland peace process weren't even considered during the first referendum"
@@ -35,8 +36,8 @@ struct Room {
     var highlightedText: String
 }
 
-struct User {
-    var handle: String
-    var password: String
-    var email: String
-}
+//struct User {
+//    var handle: String
+//    var password: String
+//    var email: String
+//}

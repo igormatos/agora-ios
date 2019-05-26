@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class UserViewController: UIViewController {
+class UserViewController: AgoraViewController {
     @IBOutlet var code: UITextField!
     
     @IBAction func logout(_ sender: UIButton) {
-        activeUser = nil
-        dismiss(animated: true, completion: nil)
+        do {
+            try Auth.auth().signOut()
+            loggedUser = nil
+            dismiss(animated: true, completion: nil)
+        } catch let error as NSError {
+            self.showAlert(title: "Erro no Logout", message: error.description)
+        }
     }
     
     @IBAction func createRoom(_ sender: UIButton) {

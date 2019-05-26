@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class SignupViewController: AgoraViewController {
     @IBOutlet var handle: UITextField!
@@ -17,8 +18,16 @@ class SignupViewController: AgoraViewController {
             return
         }
         
-        users[username] = User(handle: username, password: password, email: email)
-        navigationController!.popViewController(animated: true)
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            guard let user = authResult?.user else {
+                self.showAlert(title: "Erro no cadastro", message: "\(error!.localizedDescription)")
+                return
+                
+            }
+            
+            self.navigationController!.popViewController(animated: true)
+        }
+        
     }
     
     override func viewDidLoad() {
