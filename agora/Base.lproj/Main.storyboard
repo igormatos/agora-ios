@@ -970,10 +970,12 @@
                                     <color key="titleColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Código aqui!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD0-Nr-uDj">
-                                <rect key="frame" x="-14" y="284" width="403" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código aqui!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD0-Nr-uDj">
+                                <rect key="frame" x="0.0" y="293.5" width="375" height="80"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="KbR-nO-54I"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
                                 <color key="textColor" red="0.13725490200000001" green="0.1176470588" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -985,8 +987,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajc-OI-ssG">
+                                <rect key="frame" x="166" y="381.5" width="43" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4oG-OH-qpr"/>
+                                    <constraint firstAttribute="width" constant="43" id="5QI-Qu-5B1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="copyIcon"/>
+                                <connections>
+                                    <action selector="copyCodeClick:" destination="KfK-GD-cRI" eventType="touchUpInside" id="QnX-NB-Sqd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zD0-Nr-uDj" firstAttribute="leading" secondItem="DpI-S3-y7z" secondAttribute="leading" id="FYz-Q8-ioa"/>
+                            <constraint firstItem="Ajc-OI-ssG" firstAttribute="top" secondItem="zD0-Nr-uDj" secondAttribute="bottom" constant="8" id="HRf-qf-AKu"/>
+                            <constraint firstItem="Ajc-OI-ssG" firstAttribute="centerX" secondItem="biN-84-LRn" secondAttribute="centerX" id="KzE-Vk-Cf9"/>
+                            <constraint firstItem="zD0-Nr-uDj" firstAttribute="centerY" secondItem="biN-84-LRn" secondAttribute="centerY" id="LXd-gH-4oq"/>
+                            <constraint firstItem="DpI-S3-y7z" firstAttribute="trailing" secondItem="zD0-Nr-uDj" secondAttribute="trailing" id="jxO-BS-BHL"/>
+                            <constraint firstItem="zD0-Nr-uDj" firstAttribute="centerX" secondItem="biN-84-LRn" secondAttribute="centerX" id="wdo-Ew-eUD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DpI-S3-y7z"/>
                     </view>
                     <connections>
@@ -1272,4 +1295,7 @@
             <point key="canvasLocation" x="2937" y="-322"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="copyIcon" width="512" height="512"/>
+    </resources>
 </document>

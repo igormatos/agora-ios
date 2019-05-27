@@ -6,7 +6,7 @@ class AppSingleton {
     private static let appSingleton = AppSingleton()
     
     var loggedUser: User?
-    var loggedRoom: Room?
+    var loggedRoom: Classroom?
     
     class func shared() -> AppSingleton {
         return appSingleton
@@ -35,5 +35,5 @@ var sampleTitles = [
 
 //
 var rooms:
-    [String: Room] =
-    ["ax1453": Room(code: "AX1453", authorId: "id", author: "tcm", theme: sampleTheme, texts: [], users: [:], canJoin: true) ]
+    [String: Classroom] =
+    ["ax1453": Classroom(name: "name", code: "AX1453", authorId: "id", author: "tcm", theme: sampleTheme, texts: [], users: [:], canJoin: true) ]

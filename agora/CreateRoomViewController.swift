@@ -31,7 +31,8 @@ class CreateRoomViewController: AgoraViewController {
         
         let roomId = NanoID.new(7)
         
-        let room = Room(code: roomId,
+        let room = Classroom(name: name,
+                        code: roomId,
                         authorId: loggedUser.uid,
                         author: loggedUser.displayName!,
                         theme: theme,
