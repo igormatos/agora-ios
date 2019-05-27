@@ -15,7 +15,7 @@ class UserViewController: AgoraViewController {
     @IBAction func logout(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
-            loggedUser = nil
+            AppSingleton.shared().loggedUser = nil
             dismiss(animated: true, completion: nil)
         } catch let error as NSError {
             self.showAlert(title: "Erro no Logout", message: error.description)
@@ -29,11 +29,12 @@ class UserViewController: AgoraViewController {
     @IBAction func join(_ sender: UIButton) {
         guard let code = code.text else {return}
         guard rooms[code] != nil else {return}
-        
-        guard activeUser != nil else {return}
-        if rooms[code]?.users[activeUser!] == nil {
-            rooms[code]?.users[activeUser!] = Phase.justJoined
-        }
+
+        // todo: Firebase WIP
+//        guard activeUser != nil else {return}
+//        if rooms[code]?.users[activeUser!] == nil {
+//            rooms[code]?.users[activeUser!] = Phase.justJoined
+//        }
         
         performSegue(withIdentifier: "joinasstudentsegue", sender: self)
     }

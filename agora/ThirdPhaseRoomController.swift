@@ -18,7 +18,8 @@ class ThirdPhaseRoomController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fragment.text = "\"\(rooms[code]!.highlightedText)\""
+        fragment.text = "HighlightedText"
+//        "\"\(rooms[code]!.highlightedText)\""
     }
     
 }

@@ -25,7 +25,15 @@ class SignupViewController: AgoraViewController {
                 
             }
             
-            self.navigationController!.popViewController(animated: true)
+            let changeRequest = user.createProfileChangeRequest()
+            changeRequest.displayName = username
+            changeRequest.commitChanges { (error) in
+                if error != nil {
+                    return
+                }
+                self.navigationController!.popViewController(animated: true)
+            }
+            
         }
         
     }
