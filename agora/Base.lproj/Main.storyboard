@@ -1083,6 +1083,7 @@
                         <viewLayoutGuide key="safeArea" id="qex-ke-Odz"/>
                     </view>
                     <connections>
+                        <outlet property="clasroomName" destination="dyN-el-RcZ" id="RvP-x0-yub"/>
                         <outlet property="peopleCountLabel" destination="EpP-mi-1jH" id="Zmu-qX-4uN"/>
                     </connections>
                 </viewController>
