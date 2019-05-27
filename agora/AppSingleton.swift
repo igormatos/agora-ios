@@ -17,8 +17,6 @@ class AppSingleton {
     }
 }
 
-
-
 let sampleTheme = "Should a second referendum be held for Brexit?"
 let sampleHotTake = "the implications for the north/south Irish border and Northern Ireland peace process weren't even considered during the first referendum"
 
@@ -36,4 +34,4 @@ var sampleTitles = [
 //
 var rooms:
     [String: Classroom] =
-    ["ax1453": Classroom(name: "name", code: "AX1453", authorId: "id", author: "tcm", theme: sampleTheme, texts: [], users: [:], canJoin: true) ]
+    ["ax1453": Classroom(name: "name", authorId: "id", author: "tcm", theme: sampleTheme) ]

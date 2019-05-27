@@ -13,15 +13,13 @@ import CodableFirebase
 
 class CreateRoomViewController: AgoraViewController {
 
-    var dbReference: DatabaseReference!
-    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var themeField: UITextField!
+    var firebaseHelper: FirebaseHelper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dbReference = Database.database().reference().child("rooms")
+        firebaseHelper = FirebaseHelper.shared()
     }
     
     @IBAction func createRoomClick(_ sender: UIButton) {
@@ -29,29 +27,17 @@ class CreateRoomViewController: AgoraViewController {
             return
         }
         
-        let roomId = NanoID.new(7)
-        
         let room = Classroom(name: name,
-                        code: roomId,
-                        authorId: loggedUser.uid,
-                        author: loggedUser.displayName!,
-                        theme: theme,
-                        texts: [],
-                        users: [:],
-                        canJoin: true)
-        
-        let data = try! FirebaseEncoder().encode(room)
-        
-        self.dbReference.child(room.code).setValue(data) { (error:Error?, ref:DatabaseReference) in
-            if let error = error {
-                self.showAlert(title: "Problema ao criar a sala", message: "\(error.localizedDescription)")
-            } else {
-                AppSingleton.shared().loggedRoom = room
-                self.performSegue(withIdentifier: "getcodesegue", sender: self)
-            }
-            
-        }
+                             authorId: loggedUser.uid,
+                             author: loggedUser.displayName!,
+                             theme: theme)
 
+        firebaseHelper.createClassroom(classroom: room, onError: { error in
+            self.showAlert(title: "Problema ao criar a sala", message: "\(error)")
+        }, onSuccess: {
+            self.performSegue(withIdentifier: "getcodesegue", sender: self)
+        })
+        
     }
     
     @IBAction func backClick(_ sender: Any) {

@@ -15,9 +15,17 @@ struct Classroom: Codable {
     var authorId: String
     var author: String
     var theme: String
-    var texts: [Text]
-    var users: [String: Phase] // [userId: Phase]
-    var canJoin: Bool? = true
+    var texts: [Text] = []
+    var users: [String: Phase] = [:]// [userId: Phase]
+    var canJoin: Bool = true
+    
+    init(name: String, authorId: String, author: String, theme: String) {
+        self.name = name
+        self.code =  NanoID.new(7)
+        self.authorId = authorId
+        self.author = author
+        self.theme = theme
+    }
 }
 
 enum Phase: Codable {
