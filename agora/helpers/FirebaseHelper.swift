@@ -24,13 +24,28 @@ class FirebaseHelper {
         let data = try! FirebaseEncoder().encode(classroom)
     
         self.dbReference.child(classroom.code).setValue(data) { (error:Error?, ref:DatabaseReference) in
-        if let error = error {
-            onError(error.localizedDescription)
-        } else {
-            AppSingleton.shared().loggedRoom = classroom
-            onSuccess()
+            if let error = error {
+                onError(error.localizedDescription)
+            } else {
+                AppSingleton.shared().loggedRoom = classroom
+                onSuccess()
+            }
         }
-        }}
+    }
+    
+    func getClassroom(id: String, onError: @escaping (String) -> (), onSuccess: @escaping (Classroom) -> () ) {
+        dbReference.child(id).observe(.value) { snapshot in
+            guard let value = snapshot.value else { return }
+            
+            do {
+                let model = try FirebaseDecoder().decode(Classroom.self, from: value)
+                onSuccess(model)
+            } catch let error {
+                onError(error.localizedDescription)
+            }
+            
+        }
+    }
     
     
     private init() {
