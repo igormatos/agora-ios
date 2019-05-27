@@ -28,15 +28,20 @@ class UserViewController: AgoraViewController {
     
     @IBAction func join(_ sender: UIButton) {
         guard let code = code.text else {return}
-        guard rooms[code] != nil else {return}
-
-        // todo: Firebase WIP
-//        guard activeUser != nil else {return}
-//        if rooms[code]?.users[activeUser!] == nil {
-//            rooms[code]?.users[activeUser!] = Phase.justJoined
-//        }
         
-        performSegue(withIdentifier: "joinasstudentsegue", sender: self)
+        guard let logged = AppSingleton.shared().loggedUser else {
+            return
+        }
+        
+        let customUser = CustomUser(firebaseUser: logged)
+        
+        FirebaseHelper.shared().join(user: customUser, onClassroom: code, onError: { error in
+            self.showAlert(title: "Erro ao conectar a sala", message: error)
+        }) { classroom in
+            AppSingleton.shared().loggedRoom = classroom
+            self.performSegue(withIdentifier: "joinasstudentsegue", sender: self)
+        }
+        
     }
     
     override func viewDidLoad() {

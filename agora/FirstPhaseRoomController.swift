@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FirstPhaseRoomController: UIViewController {
+class FirstPhaseRoomController: AgoraViewController {
     var code: String!
-    @IBOutlet var theme: UITextView!
+    @IBOutlet var themeLabel: UITextView!
     
     @IBAction func next(_ sender: UIButton) {
         performSegue(withIdentifier: "writetextsegue", sender: self)
@@ -22,10 +22,16 @@ class FirstPhaseRoomController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let code = code else {return}
-        guard let roomTheme = rooms[code]?.theme else {return}
         
-        theme.text = roomTheme
+        setTheme()
+    }
+    
+    func setTheme() {
+        guard let theme = AppSingleton.shared().loggedRoom?.theme else {
+            return
+        }
+        
+        themeLabel.text = theme
     }
     
 

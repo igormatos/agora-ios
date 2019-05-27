@@ -47,6 +47,57 @@ class FirebaseHelper {
         }
     }
     
+    func join(user: CustomUser, onClassroom id: String, onError: @escaping (String) -> (), onSuccess: @escaping (Classroom) -> () ) {
+        
+        let userData = try! FirebaseEncoder().encode(user)
+
+        let roomReference = dbReference.child(id)
+        
+        roomReference.observeSingleEvent(of: .value) { snapshot in
+            guard let value = snapshot.value else {
+                onError("Problema ao conectar a sala")
+                return
+            }
+            
+            do {
+                var classroomModel = try FirebaseDecoder().decode(Classroom.self, from: value)
+                
+                var usersList: [CustomUser] = []
+                
+                if (classroomModel.users.count > 0) {
+                    usersList = classroomModel.users
+                }
+                
+                let userAlreadySigned = usersList.contains(where: { customUser -> Bool in
+                    return user.id == customUser.id
+                })
+                
+                if (!userAlreadySigned) {
+                    usersList.append(user)
+                }
+                
+                
+                let usersData = try! FirebaseEncoder().encode(usersList)
+
+                roomReference.child("users").setValue(usersData) { (error:Error?, ref:DatabaseReference) in
+                    
+                    guard snapshot.value != nil else { onError(error?.localizedDescription ?? "")
+                        return
+                    }
+                    
+                    classroomModel.users.append(user)
+                    onSuccess(classroomModel)
+                }
+                
+            } catch let error {
+                onError(error.localizedDescription)
+            }
+        }
+    }
+    
+    func clearObservers() {
+        dbReference.removeAllObservers()
+    }
     
     private init() {
         dbReference = Database.database().reference().child("classrooms")
