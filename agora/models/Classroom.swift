@@ -15,8 +15,8 @@ struct Classroom: Codable {
     var authorId: String
     var author: String
     var theme: String
-    var texts: [Text] = []
-    var users: [String: Phase] = [:]// [userId: Phase]
+    var texts: [Text]
+    var users: [String: Phase]
     var canJoin: Bool = true
     
     init(name: String, authorId: String, author: String, theme: String) {
@@ -25,7 +25,40 @@ struct Classroom: Codable {
         self.authorId = authorId
         self.author = author
         self.theme = theme
+        self.texts = []
+        self.users = [:]// [userId: Phase]
+        self.canJoin = true
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        code = try container.decode(String.self, forKey: .code)
+        authorId = try container.decode(String.self, forKey: .authorId)
+        author = try container.decode(String.self, forKey: .author)
+        theme = try container.decode(String.self, forKey: .theme)
+        canJoin = try container.decode(Bool.self, forKey: .canJoin)
+        
+        do {
+            texts = try container.decode([Text].self, forKey: .texts)
+            users = try container.decode([String:Phase].self, forKey: .users)
+        } catch {
+            texts = []
+            users = [:]
+        }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case code
+        case authorId
+        case canJoin
+        case author
+        case theme
+        case texts
+        case users
+    }
+    
 }
 
 enum Phase: Codable {
