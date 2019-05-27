@@ -4,8 +4,9 @@ import FirebaseAuth
 class AppSingleton {
     
     private static let appSingleton = AppSingleton()
-    var activeUser: String?
+    
     var loggedUser: User?
+    var loggedRoom: Room?
     
     class func shared() -> AppSingleton {
         return appSingleton

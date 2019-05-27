@@ -10,6 +10,7 @@
 		4FC810D0229B11AD00AEAE1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */; };
 		4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BD229B163400381229 /* AgoraViewController.swift */; };
 		4FE086C0229B22F400381229 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BF229B22F400381229 /* CreateRoomViewController.swift */; };
+		4FE9590F229B65F0006B232A /* GetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE9590E229B65F0006B232A /* GetCodeViewController.swift */; };
 		4FFDEFB1229B522F00581083 /* NanoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFDEFB0229B522F00581083 /* NanoID.swift */; };
 		4FFDEFB4229B533200581083 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFDEFB3229B533200581083 /* Room.swift */; };
 		6EF70EA50A6835C9B9A84588 /* Pods_agora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */; };
@@ -42,6 +43,7 @@
 		4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FE086BD229B163400381229 /* AgoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraViewController.swift; sourceTree = "<group>"; };
 		4FE086BF229B22F400381229 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		4FE9590E229B65F0006B232A /* GetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCodeViewController.swift; sourceTree = "<group>"; };
 		4FFDEFB0229B522F00581083 /* NanoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoID.swift; sourceTree = "<group>"; };
 		4FFDEFB3229B533200581083 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4FE9590D229B65C0006B232A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FE9590E229B65F0006B232A /* GetCodeViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		4FFDEFB2229B532300581083 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		AC0B983C2290F491008E8FCE /* agora */ = {
 			isa = PBXGroup;
 			children = (
+				4FE9590D229B65C0006B232A /* controllers */,
 				4FFDEFB2229B532300581083 /* models */,
 				800D2DB62293B60D00079DEC /* CreteRound-Regular.ttf */,
 				800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */,
@@ -315,6 +326,7 @@
 				800D2DC82293C1B100079DEC /* GradeTextController.swift in Sources */,
 				ACF3BF342290F5E3002899D7 /* AppSingleton.swift in Sources */,
 				4FFDEFB4229B533200581083 /* Room.swift in Sources */,
+				4FE9590F229B65F0006B232A /* GetCodeViewController.swift in Sources */,
 				800D2DC02293BD7200079DEC /* FirstPhaseRoomController.swift in Sources */,
 				4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */,
 				AC0B983E2290F491008E8FCE /* AppDelegate.swift in Sources */,

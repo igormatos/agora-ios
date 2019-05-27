@@ -953,10 +953,10 @@
             </objects>
             <point key="canvasLocation" x="165.59999999999999" y="1234.6326836581711"/>
         </scene>
-        <!--View Controller-->
+        <!--Get Code View Controller-->
         <scene sceneID="xcZ-x2-ITi">
             <objects>
-                <viewController id="KfK-GD-cRI" sceneMemberID="viewController">
+                <viewController id="KfK-GD-cRI" customClass="GetCodeViewController" customModule="agora" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="biN-84-LRn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -989,6 +989,9 @@
                         <color key="backgroundColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DpI-S3-y7z"/>
                     </view>
+                    <connections>
+                        <outlet property="roomCodeLabel" destination="zD0-Nr-uDj" id="YEH-bt-OPj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tok-kj-ghX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

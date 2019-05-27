@@ -29,7 +29,6 @@ class CreateRoomViewController: AgoraViewController {
             return
         }
         
-        
         let roomId = NanoID.new(7)
         
         let room = Room(code: roomId,
@@ -42,7 +41,15 @@ class CreateRoomViewController: AgoraViewController {
         
         let data = try! FirebaseEncoder().encode(room)
         
-        self.dbReference.child(room.code).setValue(data)
+        self.dbReference.child(room.code).setValue(data) { (error:Error?, ref:DatabaseReference) in
+            if let error = error {
+                self.showAlert(title: "Problema ao criar a sala", message: "\(error.localizedDescription)")
+            } else {
+                AppSingleton.shared().loggedRoom = room
+                self.performSegue(withIdentifier: "getcodesegue", sender: self)
+            }
+            
+        }
 
     }
     
