@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Room: Codable {
+struct Classroom: Codable {
     var code: String
     var authorId: String
     var author: String

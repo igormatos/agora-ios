@@ -21,6 +21,10 @@ class GetCodeViewController: AgoraViewController {
         
         roomCodeLabel.text = roomCode
     }
+
+    @IBAction func copyCodeClick(_ sender: Any) {
+        UIPasteboard.general.string = roomCodeLabel.text!
+    }
     
 
     /*
