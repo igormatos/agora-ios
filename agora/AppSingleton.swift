@@ -7,6 +7,7 @@ class AppSingleton {
     
     var loggedUser: User?
     var loggedRoom: Classroom?
+    var customUser: CustomUser?
     
     class func shared() -> AppSingleton {
         return appSingleton

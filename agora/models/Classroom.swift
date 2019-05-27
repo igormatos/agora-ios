@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 struct Classroom: Codable {
     var name: String
@@ -16,7 +17,7 @@ struct Classroom: Codable {
     var author: String
     var theme: String
     var texts: [Text]
-    var users: [String: Phase]
+    var users: [CustomUser]
     var canJoin: Bool = true
     
     init(name: String, authorId: String, author: String, theme: String) {
@@ -26,7 +27,7 @@ struct Classroom: Codable {
         self.author = author
         self.theme = theme
         self.texts = []
-        self.users = [:]// [userId: Phase]
+        self.users = []
         self.canJoin = true
     }
     
@@ -41,10 +42,14 @@ struct Classroom: Codable {
         
         do {
             texts = try container.decode([Text].self, forKey: .texts)
-            users = try container.decode([String:Phase].self, forKey: .users)
         } catch {
             texts = []
-            users = [:]
+        }
+        
+        do {
+            users = try container.decode([CustomUser].self, forKey: .users)
+        } catch {
+            users = []
         }
     }
     
@@ -119,6 +124,18 @@ struct Text: Codable {
 }
 
 struct Highlighted: Codable {
-    var text: String
-    var color: String
+    var text: String // "Muito importante analisarmos que..."
+    var color: String // #cccccc
+}
+
+struct CustomUser: Codable {
+    var name: String
+    var phase: Phase
+    var id: String
+    
+    init(firebaseUser: User) {
+        self.name = firebaseUser.displayName!
+        self.id = firebaseUser.uid
+        self.phase = Phase.justJoined
+    }
 }
