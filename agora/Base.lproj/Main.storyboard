@@ -969,6 +969,9 @@
                                 <state key="normal" title="VER SALA">
                                     <color key="titleColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hFh-x5-rDj" kind="show" id="4Jn-bm-hJR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código aqui!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD0-Nr-uDj">
                                 <rect key="frame" x="0.0" y="293.5" width="375" height="80"/>
@@ -1020,10 +1023,10 @@
             </objects>
             <point key="canvasLocation" x="1340" y="447.52623688155927"/>
         </scene>
-        <!--View Controller-->
+        <!--Classroom View Controller-->
         <scene sceneID="jTd-2B-DuK">
             <objects>
-                <viewController id="hFh-x5-rDj" sceneMemberID="viewController">
+                <viewController id="hFh-x5-rDj" customClass="ClassroomViewController" customModule="agora" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NjJ-L7-Npm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1046,6 +1049,9 @@
                                 <state key="normal" title="OPINIÕES">
                                     <color key="titleColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="4Nn-41-QPN" kind="show" id="9L1-Us-9b6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIL-cz-2T3">
                                 <rect key="frame" x="0.0" y="500" width="187" height="89"/>
@@ -1076,6 +1082,9 @@
                         <color key="backgroundColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qex-ke-Odz"/>
                     </view>
+                    <connections>
+                        <outlet property="peopleCountLabel" destination="EpP-mi-1jH" id="Zmu-qX-4uN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvb-Yg-iqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
