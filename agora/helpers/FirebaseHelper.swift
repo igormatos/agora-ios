@@ -48,11 +48,8 @@ class FirebaseHelper {
     }
     
     func join(user: CustomUser, onClassroom id: String, onError: @escaping (String) -> (), onSuccess: @escaping (Classroom) -> () ) {
-        
-        let userData = try! FirebaseEncoder().encode(user)
-
         let roomReference = dbReference.child(id)
-        
+        let userData = try! FirebaseEncoder().encode(user)
         roomReference.observeSingleEvent(of: .value) { snapshot in
             guard let value = snapshot.value else {
                 onError("Problema ao conectar a sala")
@@ -62,26 +59,10 @@ class FirebaseHelper {
             do {
                 var classroomModel = try FirebaseDecoder().decode(Classroom.self, from: value)
                 
-                var usersList: [CustomUser] = []
-                
-                if (classroomModel.users.count > 0) {
-                    usersList = classroomModel.users
-                }
-                
-                let userAlreadySigned = usersList.contains(where: { customUser -> Bool in
-                    return user.id == customUser.id
-                })
-                
-                if (!userAlreadySigned) {
-                    usersList.append(user)
-                }
-                
-                
-                let usersData = try! FirebaseEncoder().encode(usersList)
-
-                roomReference.child("users").setValue(usersData) { (error:Error?, ref:DatabaseReference) in
+                roomReference.child("users/\(user.id)").setValue(userData) { (error:Error?, ref:DatabaseReference) in
                     
-                    guard snapshot.value != nil else { onError(error?.localizedDescription ?? "")
+                    guard snapshot.value != nil else {
+                        onError(error?.localizedDescription ?? "")
                         return
                     }
                     
@@ -94,6 +75,25 @@ class FirebaseHelper {
             }
         }
     }
+    
+    func send(text: Text, toRoom roomId: String, onError: @escaping (String) -> (), onSuccess: @escaping () -> () ) {
+        let textData = try! FirebaseEncoder().encode(text)
+        
+        dbReference.child(roomId).child("texts/\(text.id)").setValue(textData) { (error, ref) in
+            if let error = error?.localizedDescription {
+                onError(error)
+                return
+            }
+            
+            onSuccess()
+        }
+        
+    }
+    
+    func changePhase(to phase: Phase, of userId: String) {
+        
+    }
+    
     
     func clearObservers() {
         dbReference.removeAllObservers()

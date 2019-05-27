@@ -8,14 +8,24 @@
 
 import UIKit
 
-class WriteTextController: UIViewController {
+class WriteTextController: AgoraViewController {
     var code: String!
     
     @IBOutlet var textTitle: UITextView!
     @IBOutlet var textBody: UITextView!
     
     @IBAction func send(_ sender: UIButton) {
-        performSegue(withIdentifier: "secondphasesegue", sender: self)
+        guard let user = AppSingleton.shared().loggedUser, let name = user.displayName, let room = AppSingleton.shared().loggedRoom else { return }
+        
+        var text = Text(author: name, authorId: user.uid, body: textBody.text, theme: textTitle.text)
+        
+        FirebaseHelper.shared().send(text: text, toRoom: room.code, onError: { error in
+            self.showAlert(title: "Erro ao enviar o artigo", message: error)
+        }) {
+            self.showAlert(title: "Deu certo", message: "aeea")
+        }
+        
+//        performSegue(withIdentifier: "secondphasesegue", sender: self)
     }
     @IBAction func close(_ sender: UIButton) {
         presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
