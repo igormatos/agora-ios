@@ -42,7 +42,7 @@ class LoginViewController: AgoraViewController {
         authHandle = Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else { return }
             
-            loggedUser = user
+            AppSingleton.shared().loggedUser = user
 
             self.performSegue(withIdentifier: "loggedinsegue", sender: self)
         }
