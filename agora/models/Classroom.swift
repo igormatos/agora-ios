@@ -22,7 +22,7 @@ struct Classroom: Codable {
     
     init(name: String, authorId: String, author: String, theme: String) {
         self.name = name
-        self.code =  NanoID.new(7)
+        self.code =  NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
         self.authorId = authorId
         self.author = author
         self.theme = theme
@@ -116,16 +116,60 @@ enum Phase: Codable {
 
 
 struct Text: Codable {
+    var id: String
     var author: String
     var authorId: String
     var body: String
     var theme: String
     var highlightedTexts: [Highlighted]
+    
+    init (author: String, authorId: String, body: String, theme: String) {
+        self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
+        self.author = author
+        self.authorId = authorId
+        self.body = body
+        self.theme = theme
+        self.highlightedTexts = []
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        author = try container.decode(String.self, forKey: .author)
+        authorId = try container.decode(String.self, forKey: .authorId)
+        body = try container.decode(String.self, forKey: .body)
+        theme = try container.decode(String.self, forKey: .theme)
+        
+        do {
+            try highlightedTexts = try container.decode([Highlighted].self, forKey: .highlightedTexts)
+        } catch {
+            highlightedTexts = []
+        }
+    
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case author
+        case authorId
+        case body
+        case theme
+        
+        case highlightedTexts
+    }
 }
 
 struct Highlighted: Codable {
+    var id: String
     var text: String // "Muito importante analisarmos que..."
     var color: String // #cccccc
+    
+    init (text: String, color: String) {
+        self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
+        self.text = text
+        self.color = color
+    }
+    
 }
 
 struct CustomUser: Codable {
