@@ -8,5 +8,7 @@ target 'agora' do
   # Pods for agora
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'CodableFirebase'
 
 end
