@@ -1,14 +1,22 @@
 import Foundation
 import FirebaseAuth
 
-enum Phase {
-    case justJoined, writing, mayGrade, grading, debate
+class AppSingleton {
+    
+    private static let appSingleton = AppSingleton()
+    var activeUser: String?
+    var loggedUser: User?
+    
+    class func shared() -> AppSingleton {
+        return appSingleton
+    }
+    
+    private init() {
+        
+    }
 }
 
-var activeUser: String?
-var loggedUser: User?
 
-//var users: [String: User] = ["tcm": User(handle: "tcm", password: "abc", email: "tcm@gmail.com")]
 
 let sampleTheme = "Should a second referendum be held for Brexit?"
 let sampleHotTake = "the implications for the north/south Irish border and Northern Ireland peace process weren't even considered during the first referendum"
@@ -24,20 +32,7 @@ var sampleTitles = [
     "There is no time!",
 ]
 
-var rooms: [String: Room] = ["ax1453": Room(code: "AX1453", author: "dcm", theme: sampleTheme, texts: [], users: [:], canJoin: true, highlightedText: sampleHotTake)]
-
-struct Room {
-    var code: String
-    var author: String
-    var theme: String
-    var texts: [(String, String, String)]
-    var users: [String: Phase]
-    var canJoin: Bool
-    var highlightedText: String
-}
-
-//struct User {
-//    var handle: String
-//    var password: String
-//    var email: String
-//}
+//
+var rooms:
+    [String: Room] =
+    ["ax1453": Room(code: "AX1453", authorId: "id", author: "tcm", theme: sampleTheme, texts: [], users: [:], canJoin: true) ]

@@ -10,6 +10,8 @@
 		4FC810D0229B11AD00AEAE1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */; };
 		4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BD229B163400381229 /* AgoraViewController.swift */; };
 		4FE086C0229B22F400381229 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BF229B22F400381229 /* CreateRoomViewController.swift */; };
+		4FFDEFB1229B522F00581083 /* NanoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFDEFB0229B522F00581083 /* NanoID.swift */; };
+		4FFDEFB4229B533200581083 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFDEFB3229B533200581083 /* Room.swift */; };
 		6EF70EA50A6835C9B9A84588 /* Pods_agora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */; };
 		800D2DB92293B60D00079DEC /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */; };
 		800D2DBA2293B60D00079DEC /* ZillaSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */; };
@@ -33,13 +35,15 @@
 		ACF3BF302290F5E3002899D7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF292290F5E2002899D7 /* UserViewController.swift */; };
 		ACF3BF312290F5E3002899D7 /* UserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */; };
 		ACF3BF332290F5E3002899D7 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */; };
-		ACF3BF342290F5E3002899D7 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2D2290F5E2002899D7 /* System.swift */; };
+		ACF3BF342290F5E3002899D7 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3BF2D2290F5E2002899D7 /* AppSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FE086BD229B163400381229 /* AgoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraViewController.swift; sourceTree = "<group>"; };
 		4FE086BF229B22F400381229 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		4FFDEFB0229B522F00581083 /* NanoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoID.swift; sourceTree = "<group>"; };
+		4FFDEFB3229B533200581083 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		6AD653D3A00E1EF0C4903EFD /* Pods_agora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Righteous-Regular.ttf"; path = "Fonts/Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		800D2DB42293B60D00079DEC /* ZillaSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZillaSlab-SemiBold.ttf"; path = "Fonts/ZillaSlab-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		ACF3BF292290F5E2002899D7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavigationController.swift; sourceTree = "<group>"; };
 		ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		ACF3BF2D2290F5E2002899D7 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		ACF3BF2D2290F5E2002899D7 /* AppSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
 		DCB0283DC11BB40817358C1C /* Pods-agora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agora.debug.xcconfig"; path = "Pods/Target Support Files/Pods-agora/Pods-agora.debug.xcconfig"; sourceTree = "<group>"; };
 		FA7F0471CA15B350D4DDA445 /* Pods-agora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agora.release.xcconfig"; path = "Pods/Target Support Files/Pods-agora/Pods-agora.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4FFDEFB2229B532300581083 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4FFDEFB3229B533200581083 /* Room.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		AC0B98312290F491008E8FCE = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		AC0B983C2290F491008E8FCE /* agora */ = {
 			isa = PBXGroup;
 			children = (
+				4FFDEFB2229B532300581083 /* models */,
 				800D2DB62293B60D00079DEC /* CreteRound-Regular.ttf */,
 				800D2DB32293B60D00079DEC /* Righteous-Regular.ttf */,
 				800D2DB52293B60D00079DEC /* ZillaSlab-Bold.ttf */,
@@ -126,7 +139,7 @@
 				ACF3BF282290F5E2002899D7 /* LoginViewController.swift */,
 				ACF3BF2C2290F5E2002899D7 /* MainNavigationController.swift */,
 				ACF3BF272290F5E2002899D7 /* SignupViewController.swift */,
-				ACF3BF2D2290F5E2002899D7 /* System.swift */,
+				ACF3BF2D2290F5E2002899D7 /* AppSingleton.swift */,
 				ACF3BF2A2290F5E2002899D7 /* UserNavigationController.swift */,
 				ACF3BF292290F5E2002899D7 /* UserViewController.swift */,
 				800D2DBF2293BD7200079DEC /* FirstPhaseRoomController.swift */,
@@ -139,6 +152,7 @@
 				4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */,
 				4FE086BD229B163400381229 /* AgoraViewController.swift */,
 				4FE086BF229B22F400381229 /* CreateRoomViewController.swift */,
+				4FFDEFB0229B522F00581083 /* NanoID.swift */,
 			);
 			path = agora;
 			sourceTree = "<group>";
@@ -236,16 +250,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-agora/Pods-agora-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,13 +306,15 @@
 				800D2DC22293C15B00079DEC /* SecondPhaseRoomController.swift in Sources */,
 				ACF3BF302290F5E3002899D7 /* UserViewController.swift in Sources */,
 				800D2DCA2293D55600079DEC /* HorizontalPanner.swift in Sources */,
+				4FFDEFB1229B522F00581083 /* NanoID.swift in Sources */,
 				800D2DC42293C16C00079DEC /* ThirdPhaseRoomController.swift in Sources */,
 				ACF3BF312290F5E3002899D7 /* UserNavigationController.swift in Sources */,
 				ACF3BF2E2290F5E3002899D7 /* SignupViewController.swift in Sources */,
 				4FE086C0229B22F400381229 /* CreateRoomViewController.swift in Sources */,
 				AC0B98402290F491008E8FCE /* ViewController.swift in Sources */,
 				800D2DC82293C1B100079DEC /* GradeTextController.swift in Sources */,
-				ACF3BF342290F5E3002899D7 /* System.swift in Sources */,
+				ACF3BF342290F5E3002899D7 /* AppSingleton.swift in Sources */,
+				4FFDEFB4229B533200581083 /* Room.swift in Sources */,
 				800D2DC02293BD7200079DEC /* FirstPhaseRoomController.swift in Sources */,
 				4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */,
 				AC0B983E2290F491008E8FCE /* AppDelegate.swift in Sources */,
