@@ -48,6 +48,10 @@ class UserViewController: AgoraViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        FirebaseHelper.shared().clearObservers()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let room = segue.destination as? FirstPhaseRoomController {
             room.code = code.text!
