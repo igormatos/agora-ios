@@ -367,7 +367,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-aa-SS3">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-aa-SS3">
                                 <rect key="frame" x="0.0" y="472" width="375" height="99"/>
                                 <color key="backgroundColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

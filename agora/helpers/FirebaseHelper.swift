@@ -90,25 +90,27 @@ class FirebaseHelper {
         
     }
     
-    func waitForNextPhase(to phase: Phase,
+    func waitForNextPhase(to stage: Int,
                           ofUser userId: String,
                           onRoom roomId: String,
                           onError: @escaping (String) -> (),
-                          onSuccess: @escaping (Phase) -> ()) {
+                          onSuccess: @escaping (Int) -> ()) {
         
-        dbReference.child(roomId).child("users/\(userId)/phase/rawValue").observe(.value) { snapshot in
+        dbReference.child(roomId).child("stage").observe(.value) { snapshot in
             
             guard let value = snapshot.value else {
                 return
             }
-            do {
-                let newPhase = try FirebaseDecoder().decode(Phase.self, from: value)
-                if (phase == newPhase) {
-                    onSuccess(newPhase)
-                }
-            } catch {
+            
+            if let newValue = value as? Int, newValue == stage {
+                    onSuccess(newValue)
+            } else {
                 onError("")
             }
+//            do {
+//            } catch {
+//                onError("")
+//            }
 
             
 //            do {
