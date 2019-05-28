@@ -46,6 +46,7 @@ class UserViewController: AgoraViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        code.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

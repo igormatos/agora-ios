@@ -19,6 +19,7 @@ struct Classroom: Codable {
     var texts: [Text]
     var users: [CustomUser]
     var canJoin: Bool = true
+    var stage: Int
     
     init(name: String, authorId: String, author: String, theme: String) {
         self.name = name
@@ -29,6 +30,7 @@ struct Classroom: Codable {
         self.texts = []
         self.users = []
         self.canJoin = true
+        self.stage = 0
     }
     
     init(from decoder: Decoder) throws {
@@ -39,6 +41,7 @@ struct Classroom: Codable {
         author = try container.decode(String.self, forKey: .author)
         theme = try container.decode(String.self, forKey: .theme)
         canJoin = try container.decode(Bool.self, forKey: .canJoin)
+        stage = try container.decode(Int.self, forKey: .stage)
         
         do {
             texts = try container.decode([Text].self, forKey: .texts)
@@ -60,8 +63,10 @@ struct Classroom: Codable {
         case canJoin
         case author
         case theme
+        case stage
         case texts
         case users
+        
     }
     
 }
@@ -174,12 +179,10 @@ struct Highlighted: Codable {
 
 struct CustomUser: Codable {
     var name: String
-    var phase: Phase
     var id: String
     
     init(firebaseUser: User) {
         self.name = firebaseUser.displayName!
         self.id = firebaseUser.uid
-        self.phase = Phase.justJoined
     }
 }
