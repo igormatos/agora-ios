@@ -35,7 +35,6 @@ class LoginViewController: AgoraViewController {
         
         usernameField.delegate = self
         passwordField.delegate = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +53,6 @@ class LoginViewController: AgoraViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder() // Dismiss the keyboard
-        
-        doLogin()
         return true
     }
     
