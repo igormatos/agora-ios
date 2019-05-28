@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SecondPhaseViewController: UIViewController {
+class SecondPhaseViewController: AgoraViewController {
     var code: String!
+    @IBOutlet weak var okButton: UIButton!
     
     @IBAction func next(_ sender: UIButton) {
         performSegue(withIdentifier: "gradetextsegue", sender: self)
@@ -21,8 +22,17 @@ class SecondPhaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
     
+        guard let userId = AppSingleton.shared().loggedUser?.uid, let roomId = AppSingleton.shared().loggedRoom?.authorId else { return }
+        
+        FirebaseHelper.shared().waitForNextPhase(to: .mayGrade, ofUser: userId, onRoom: roomId, onError: { (String) in
+            
+        }) { (phase) in
+            self.showAlert(title: "Pode avaliar!", message: "hihi")
+            self.okButton.isEnabled = true
+        }
+    
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let room = segue.destination as? GradeTextController {
