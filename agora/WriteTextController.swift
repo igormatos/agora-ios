@@ -17,15 +17,15 @@ class WriteTextController: AgoraViewController {
     @IBAction func send(_ sender: UIButton) {
         guard let user = AppSingleton.shared().loggedUser, let name = user.displayName, let room = AppSingleton.shared().loggedRoom else { return }
         
-        var text = Text(author: name, authorId: user.uid, body: textBody.text, theme: textTitle.text)
+        let text = Text(author: name, authorId: user.uid, body: textBody.text, theme: textTitle.text)
         
         FirebaseHelper.shared().send(text: text, toRoom: room.code, onError: { error in
             self.showAlert(title: "Erro ao enviar o artigo", message: error)
         }) {
-            self.showAlert(title: "Deu certo", message: "aeea")
+            self.performSegue(withIdentifier: "secondphasesegue", sender: self)
         }
         
-//        performSegue(withIdentifier: "secondphasesegue", sender: self)
+
     }
     @IBAction func close(_ sender: UIButton) {
         presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
