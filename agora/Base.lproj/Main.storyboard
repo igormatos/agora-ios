@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0k-3u-DWx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0k-3u-DWx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -280,7 +280,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWo-PR-DlW">
-                                <rect key="frame" x="0.0" y="476" width="375" height="99"/>
+                                <rect key="frame" x="0.0" y="472" width="375" height="99"/>
                                 <color key="backgroundColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="99" id="Olt-9d-hgJ"/>
@@ -296,7 +296,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTX-bs-f6c">
-                                <rect key="frame" x="76" y="593" width="223" height="54"/>
+                                <rect key="frame" x="76" y="589" width="223" height="58"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="36"/>
                                 <state key="normal" title="voltar">
                                     <color key="titleColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -306,7 +306,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escreva sobre o tema da sala:" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rez-Vv-PxZ">
-                                <rect key="frame" x="45" y="84" width="284" height="51.5"/>
+                                <rect key="frame" x="45" y="84" width="284" height="28.5"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="22"/>
                                 <color key="textColor" red="0.141792893409729" green="0.11800775676965714" blue="0.088494665920734406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -318,7 +318,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="[TEMA]" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-tQ-Rxm">
-                                <rect key="frame" x="16" y="159" width="343" height="309"/>
+                                <rect key="frame" x="16" y="136" width="343" height="328"/>
                                 <color key="textColor" red="0.13841480016708374" green="0.11867488175630569" blue="0.087420441210269928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -398,7 +398,7 @@
                                 <color key="textColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque com vermelho as partes que discorda e passe para o próximo texto." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIP-xv-Aox">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque com vermelho as partes que discorda e com verde as que concorda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIP-xv-Aox">
                                 <rect key="frame" x="40" y="296" width="294" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="Lmt-4o-TSe"/>
@@ -456,7 +456,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debata com os seus colegas sobre o seguinte trecho:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLi-Be-21f">
-                                <rect key="frame" x="39" y="94" width="294" height="51.5"/>
+                                <rect key="frame" x="39" y="94" width="294" height="56.5"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="22"/>
                                 <color key="textColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -468,7 +468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="[TRECHO]" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xXT-jO-xCL">
-                                <rect key="frame" x="16" y="166" width="343" height="382"/>
+                                <rect key="frame" x="16" y="171" width="343" height="377"/>
                                 <color key="textColor" red="0.13841480019999999" green="0.11867488180000001" blue="0.087420441210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -634,7 +634,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbu-MB-dgw">
-                                <rect key="frame" x="264" y="216" width="111" height="99"/>
+                                <rect key="frame" x="264" y="218.5" width="111" height="99"/>
                                 <color key="backgroundColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="99" id="Bcr-7S-XGZ"/>
@@ -650,7 +650,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="código" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNZ-tr-cek">
-                                <rect key="frame" x="0.0" y="216.5" width="264" height="99"/>
+                                <rect key="frame" x="0.0" y="219" width="264" height="99"/>
                                 <color key="backgroundColor" red="0.6996923089" green="0.82642084360000001" blue="0.13195961710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="99" id="o6L-zh-pQm"/>
@@ -660,7 +660,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se conecte a uma sala:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm1-29-glc">
-                                <rect key="frame" x="0.0" y="182" width="375" height="26"/>
+                                <rect key="frame" x="0.0" y="182" width="375" height="28.5"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="22"/>
                                 <color key="textColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1303,6 +1303,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="copyIcon" width="512" height="512"/>
+        <image name="copyIcon" width="384" height="384"/>
     </resources>
 </document>

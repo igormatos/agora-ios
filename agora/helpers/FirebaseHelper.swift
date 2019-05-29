@@ -66,7 +66,7 @@ class FirebaseHelper {
                         return
                     }
                     
-                    classroomModel.users.append(user)
+                    classroomModel.users[user.id] = user
                     onSuccess(classroomModel)
                 }
                 
@@ -94,31 +94,32 @@ class FirebaseHelper {
                           ofUser userId: String,
                           onRoom roomId: String,
                           onError: @escaping (String) -> (),
-                          onSuccess: @escaping (Int) -> ()) {
+                          onSuccess: @escaping (Classroom) -> ()) {
         
-        dbReference.child(roomId).child("stage").observe(.value) { snapshot in
+        dbReference.child(roomId).child("stage").observeSingleEvent(of: .value) { snapshot in
             
             guard let value = snapshot.value else {
                 return
             }
             
             if let newValue = value as? Int, newValue == stage {
-                    onSuccess(newValue)
+                
+                self.dbReference.child(roomId).observeSingleEvent(of: .value, with: { snapshott in
+                    guard let value = snapshott.value else {
+                        return
+                    }
+                    do {
+                        let model = try FirebaseDecoder().decode(Classroom.self, from: value)
+                        onSuccess(model)
+                    } catch let error {
+                        onError(error.localizedDescription)
+                    }
+                })
+                
             } else {
                 onError("")
             }
-//            do {
-//            } catch {
-//                onError("")
-//            }
 
-            
-//            do {
-//                let model = try FirebaseDecoder().decode(Classroom.self, from: value)
-//                onSuccess(model)
-//            } catch let error {
-//                onError(error.localizedDescription)
-//            }
         }
     }
     

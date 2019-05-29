@@ -16,8 +16,9 @@ struct Classroom: Codable {
     var authorId: String
     var author: String
     var theme: String
-    var texts: [Text]
-    var users: [CustomUser]
+    var texts: [String:Text]
+    var users: [String:CustomUser]
+    var highlightedText: Highlighted?
     var stage: Int
     
     init(name: String, authorId: String, author: String, theme: String) {
@@ -26,8 +27,8 @@ struct Classroom: Codable {
         self.authorId = authorId
         self.author = author
         self.theme = theme
-        self.texts = []
-        self.users = []
+        self.texts = [:]
+        self.users = [:]
         self.stage = 0
     }
     
@@ -41,16 +42,24 @@ struct Classroom: Codable {
         stage = try container.decode(Int.self, forKey: .stage)
         
         do {
-            texts = try container.decode([Text].self, forKey: .texts)
+            texts = try container.decode([String:Text].self, forKey: .texts)
         } catch {
-            texts = []
+            texts = [:]
         }
         
         do {
-            users = try container.decode([CustomUser].self, forKey: .users)
+            users = try container.decode([String:CustomUser].self, forKey: .users)
         } catch {
-            users = []
+            users = [:]
         }
+        
+        do {
+        highlightedText = try container.decode(Highlighted.self, forKey: .highlightedText)
+        } catch {
+            
+        }
+        
+        
     }
     
     enum CodingKeys: String, CodingKey {
@@ -62,6 +71,7 @@ struct Classroom: Codable {
         case stage
         case texts
         case users
+        case highlightedText
         
     }
     
@@ -122,7 +132,7 @@ struct Text: Codable {
     var authorId: String
     var body: String
     var theme: String
-    var highlightedTexts: [Highlighted]
+    var highlightedTexts: [String:Highlighted]
     
     init (author: String, authorId: String, body: String, theme: String) {
         self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
@@ -130,7 +140,7 @@ struct Text: Codable {
         self.authorId = authorId
         self.body = body
         self.theme = theme
-        self.highlightedTexts = []
+        self.highlightedTexts = [:]
     }
     
     init(from decoder: Decoder) throws {
@@ -142,9 +152,9 @@ struct Text: Codable {
         theme = try container.decode(String.self, forKey: .theme)
         
         do {
-            try highlightedTexts = try container.decode([Highlighted].self, forKey: .highlightedTexts)
+            try highlightedTexts = try container.decode([String:Highlighted].self, forKey: .highlightedTexts)
         } catch {
-            highlightedTexts = []
+            highlightedTexts = [:]
         }
     
     }

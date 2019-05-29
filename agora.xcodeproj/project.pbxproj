@@ -274,7 +274,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-agora/Pods-agora-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-agora/Pods-agora-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -293,7 +293,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-agora/Pods-agora-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-agora/Pods-agora-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		674CDCEE059B292400332E38 /* [CP] Check Pods Manifest.lock */ = {
@@ -502,7 +502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ufpe.cin.agora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -522,7 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ufpe.cin.agora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

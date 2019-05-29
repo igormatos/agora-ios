@@ -17,8 +17,20 @@ class ThirdPhaseRoomController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fragment.text = "Aguarde.."
+        
+        guard let userId = AppSingleton.shared().loggedUser?.uid, let roomId = AppSingleton.shared().loggedRoom?.code else {return}
 
-        fragment.text = "HighlightedText"
+        FirebaseHelper.shared().waitForNextPhase(to: 2, ofUser: userId, onRoom: roomId, onError: { error in
+            //
+        }) { classroom in
+            guard let highlighted = classroom.highlightedText else { return }
+            
+            self.fragment.text = highlighted.text
+        }
+        
+        
 //        "\"\(rooms[code]!.highlightedText)\""
     }
     
