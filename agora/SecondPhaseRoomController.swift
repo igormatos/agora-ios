@@ -12,6 +12,7 @@ class SecondPhaseViewController: AgoraViewController {
     var code: String!
     @IBOutlet weak var okButton: UIButton!
     
+    
     @IBAction func next(_ sender: UIButton) {
         performSegue(withIdentifier: "gradetextsegue", sender: self)
     }
@@ -22,13 +23,12 @@ class SecondPhaseViewController: AgoraViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        guard let userId = AppSingleton.shared().loggedUser?.uid, let roomId = AppSingleton.shared().loggedRoom?.authorId else { return }
+        
+        guard let userId = AppSingleton.shared().loggedUser?.uid, let roomId = AppSingleton.shared().loggedRoom?.code else { return }
         
         FirebaseHelper.shared().waitForNextPhase(to: 1, ofUser: userId, onRoom: roomId, onError: { (String) in
             
         }) { (phase) in
-            self.showAlert(title: "Pode avaliar!", message: "hihi")
             self.okButton.isEnabled = true
         }
     
