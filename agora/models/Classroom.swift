@@ -18,7 +18,6 @@ struct Classroom: Codable {
     var theme: String
     var texts: [Text]
     var users: [CustomUser]
-    var canJoin: Bool = true
     var stage: Int
     
     init(name: String, authorId: String, author: String, theme: String) {
@@ -29,7 +28,6 @@ struct Classroom: Codable {
         self.theme = theme
         self.texts = []
         self.users = []
-        self.canJoin = true
         self.stage = 0
     }
     
@@ -40,7 +38,6 @@ struct Classroom: Codable {
         authorId = try container.decode(String.self, forKey: .authorId)
         author = try container.decode(String.self, forKey: .author)
         theme = try container.decode(String.self, forKey: .theme)
-        canJoin = try container.decode(Bool.self, forKey: .canJoin)
         stage = try container.decode(Int.self, forKey: .stage)
         
         do {
@@ -60,7 +57,6 @@ struct Classroom: Codable {
         case name
         case code
         case authorId
-        case canJoin
         case author
         case theme
         case stage
