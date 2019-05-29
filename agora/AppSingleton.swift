@@ -33,6 +33,6 @@ var sampleTitles = [
 ]
 
 //
-var rooms:
-    [String: Classroom] =
-    ["ax1453": Classroom(name: "name", authorId: "id", author: "tcm", theme: sampleTheme) ]
+//var rooms:
+//    [String: Classroom] =
+//    ["ax1453": Classroom(name: "name", authorId: "id", author: "tcm", theme: sampleTheme) ]
