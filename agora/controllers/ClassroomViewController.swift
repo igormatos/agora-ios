@@ -58,5 +58,15 @@ class ClassroomViewController: AgoraViewController, UITableViewDelegate, UITable
         }
         
     }
-
+    
+    @IBAction func makeConsensus(_ sender: Any) {
+        guard let roomId = AppSingleton.shared().loggedRoom?.code else {return}
+        
+        FirebaseHelper.shared().makeConsensus(roomId: roomId, onError: { error in
+//
+        }) {
+//
+        }
+    }
+    
 }

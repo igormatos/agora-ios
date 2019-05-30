@@ -1059,6 +1059,9 @@
                                 <state key="normal" title="CONSENSO">
                                     <color key="titleColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="makeConsensus:" destination="hFh-x5-rDj" eventType="touchUpInside" id="9vi-64-ieh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X PESSOAS NA SALA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpP-mi-1jH">
                                 <rect key="frame" x="0.0" y="109" width="375" height="40"/>

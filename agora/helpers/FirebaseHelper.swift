@@ -101,7 +101,17 @@ class FirebaseHelper {
             
             onSuccess()
         }
-        
+    }
+    
+    func makeConsensus(roomId: String, onError: @escaping (String) -> (), onSuccess: @escaping () -> () ) {
+        dbReference.child(roomId).child("stage").setValue(2) { (error, ref) in
+            if let error = error?.localizedDescription {
+                onError(error)
+                return
+            }
+            
+            onSuccess()
+        }
     }
     
     func waitForNextPhase(to stage: Int,
