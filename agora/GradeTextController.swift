@@ -13,11 +13,11 @@ class GradeTextController: UIViewController {
     var index = 1
     
     @IBAction func next(_ sender: UIButton) {
+        sendHighlighted()
+        
         if index >= texts.count {
             performSegue(withIdentifier: "debatesegue", sender: self)
         } else {
-            
-            
             // Pega o proximo texto
             
             textBody.text = texts[index].body
@@ -65,6 +65,44 @@ class GradeTextController: UIViewController {
         if let room = segue.destination as? ThirdPhaseRoomController {
             room.code = code
         }
+    }
+    
+    
+    func getColorArrayToSend(_ attributedString: NSAttributedString) -> [Int] {
+        let words = attributedString.string.components(separatedBy: CharacterSet.init(charactersIn: " ,;;:.!?")).filter({(string) in string != ""})
+        
+        var colors: [Int] = []
+        for i in 0..<attributedString.string.count {
+            var key = 0
+            if let color = attributedString.attributes(at: i, effectiveRange: nil)[NSAttributedString.Key.backgroundColor] as? UIColor {
+                if color == redMarker {key = -1}
+                else if color == greenMarker {key = 1}
+            }
+            colors.append(key)
+        }
+        
+        var i = 0
+        var colorsByWord: [Int] = []
+        for word in words {
+            colorsByWord.append(colors[i])
+            i += word.count
+        }
+        return colors
+    }
+    
+    func sendHighlighted() {
+        guard let username = AppSingleton.shared().loggedUser?.displayName,
+            let roomId = AppSingleton.shared().loggedRoom?.code else { return }
+        
+        let array = getColorArrayToSend(textBody.attributedText)
+        let highlighted = Highlighted(id: username, content: array)
+        
+        FirebaseHelper.shared().sendHighlighted(highlighted: highlighted, textId: texts[index].id, roomId: roomId, onError: { error in
+            
+        }) {
+            // highlighted enviado com sucesso
+        }
+        
     }
 
     @IBAction func switchColor(_ sender: UIButton) {

@@ -123,6 +123,18 @@ class FirebaseHelper {
         }
     }
     
+    func sendHighlighted(highlighted: Highlighted, textId: String, roomId: String, onError: @escaping (String) -> (), onSuccess: @escaping () -> () ) {
+        let highlightedData = try! FirebaseEncoder().encode(highlighted)
+
+        dbReference.child(roomId).child("texts/\(textId)/highlights/\(highlighted.id)").setValue(highlightedData) { (error, ref) in
+            if let error = error?.localizedDescription {
+                onError(error)
+                return
+            }
+            
+            onSuccess()
+        }
+    }
     
     func clearObservers() {
         dbReference.removeAllObservers()

@@ -190,11 +190,12 @@ struct Highlighted: Codable {
 //    var color: String // #cccccc
     var body: [Int]
     
-    init (text: String, color: String) {
-        self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
+    init (id: String, content: [Int]) {
+//        self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
+        self.id = id
 //        self.text = text
 //        self.color = color
-        body = []
+        self.body = content
     }
     
 }
