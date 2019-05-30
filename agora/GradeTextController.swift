@@ -13,13 +13,13 @@ class GradeTextController: UIViewController {
     var index = 1
     
     @IBAction func next(_ sender: UIButton) {
-        sendHighlighted()
+        
         
         if index >= texts.count {
             performSegue(withIdentifier: "debatesegue", sender: self)
         } else {
             // Pega o proximo texto
-            
+            sendHighlighted()
             textBody.text = texts[index].body
             textTitle.text = texts[index].theme
             index += 1
@@ -44,6 +44,8 @@ class GradeTextController: UIViewController {
                 
             },
             onSuccess: { classroom in
+                    AppSingleton.shared().loggedRoom = classroom
+                
                     print(classroom.texts)
                     self.texts = classroom.texts.values.shuffled()
                     self.textBody.isScrollEnabled = false

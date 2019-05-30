@@ -34,7 +34,7 @@ class FirebaseHelper {
     }
     
     func getClassroom(id: String, onError: @escaping (String) -> (), onSuccess: @escaping (Classroom) -> () ) {
-        dbReference.child(id).observe(.value) { snapshot in
+        dbReference.child(id).observeSingleEvent(of: .value) { snapshot in
             guard let value = snapshot.value else { return }
             
             do {

@@ -47,6 +47,16 @@ class UserViewController: AgoraViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         code.becomeFirstResponder()
+        
+        if let stage = AppSingleton.shared().loggedRoom?.stage {
+            switch stage {
+                case 2:
+                    performSegue(withIdentifier: "debatesegue", sender: self)
+                default:
+                    return
+            }
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

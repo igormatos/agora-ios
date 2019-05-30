@@ -25,9 +25,11 @@ class ThirdPhaseRoomController: UIViewController {
         FirebaseHelper.shared().waitForNextPhase(to: 2, ofUser: userId, onRoom: roomId, onError: { error in
             //
         }) { classroom in
-            guard let highlighted = classroom.highlightedText else { return }
+            AppSingleton.shared().loggedRoom = classroom
             
-//            self.fragment.text = highlighted.text
+            guard let globalConsensus = classroom.globalConsensus else { return }
+            
+            self.fragment.text = globalConsensus.entryId
         }
         
         

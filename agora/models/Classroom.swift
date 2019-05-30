@@ -19,7 +19,7 @@ struct Classroom: Codable {
     var texts: [String:Text]
     var users: [String:CustomUser]
     var highlightedText: Highlighted?
-    var globalConsensus: [String:GlobalConsensus]?
+    var globalConsensus: GlobalConsensus?
     var stage: Int
     
     init(name: String, authorId: String, author: String, theme: String) {
@@ -61,7 +61,7 @@ struct Classroom: Codable {
         }
         
         do {
-         globalConsensus = try container.decode([String:GlobalConsensus].self, forKey: .globalConsensus)
+         globalConsensus = try container.decode(GlobalConsensus.self, forKey: .globalConsensus)
         } catch {
             
         }

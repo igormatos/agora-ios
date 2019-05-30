@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0k-3u-DWx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0k-3u-DWx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -369,7 +369,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-aa-SS3">
                                 <rect key="frame" x="0.0" y="472" width="375" height="99"/>
-                                <color key="backgroundColor" red="0.14117647058823529" green="0.11764705882352941" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="99" id="3Kz-UC-Q7P"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="99" id="sD2-fd-iy8"/>
@@ -440,6 +440,7 @@
                     </view>
                     <connections>
                         <outlet property="okButton" destination="7TX-aa-SS3" id="hEj-4V-Qic"/>
+                        <outlet property="subtitleLabel" destination="q1V-ml-Tgb" id="nAi-qI-wfo"/>
                         <segue destination="Lsp-sd-8J9" kind="showDetail" identifier="gradetextsegue" id="llB-gZ-1SO"/>
                     </connections>
                 </viewController>
@@ -898,7 +899,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjH-Sc-whw">
                                 <rect key="frame" x="0.0" y="568" width="375" height="99"/>
-                                <color key="backgroundColor" red="0.14179289340000001" green="0.1180077568" blue="0.088494665920000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.11764705882352941" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="99" id="D4g-sy-DNL"/>
                                     <constraint firstAttribute="height" constant="99" id="JaZ-02-EjK"/>
@@ -1303,6 +1304,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="copyIcon" width="384" height="384"/>
+        <image name="copyIcon" width="512" height="512"/>
     </resources>
 </document>
