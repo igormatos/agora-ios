@@ -19,6 +19,7 @@ struct Classroom: Codable {
     var texts: [String:Text]
     var users: [String:CustomUser]
     var highlightedText: Highlighted?
+    var globalConsensus: [String:GlobalConsensus]?
     var stage: Int
     
     init(name: String, authorId: String, author: String, theme: String) {
@@ -59,6 +60,11 @@ struct Classroom: Codable {
             
         }
         
+        do {
+         globalConsensus = try container.decode([String:GlobalConsensus].self, forKey: .globalConsensus)
+        } catch {
+            
+        }
         
     }
     
@@ -72,7 +78,7 @@ struct Classroom: Codable {
         case texts
         case users
         case highlightedText
-        
+        case globalConsensus
     }
     
 }
@@ -132,7 +138,8 @@ struct Text: Codable {
     var authorId: String
     var body: String
     var theme: String
-    var highlightedTexts: [String:Highlighted]
+    var highlights: [String:Highlighted]
+//    var consensus: [[]]
     
     init (author: String, authorId: String, body: String, theme: String) {
         self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
@@ -140,7 +147,8 @@ struct Text: Codable {
         self.authorId = authorId
         self.body = body
         self.theme = theme
-        self.highlightedTexts = [:]
+        self.highlights = [:]
+//        self.consensus = []
     }
     
     init(from decoder: Decoder) throws {
@@ -152,10 +160,16 @@ struct Text: Codable {
         theme = try container.decode(String.self, forKey: .theme)
         
         do {
-            try highlightedTexts = try container.decode([String:Highlighted].self, forKey: .highlightedTexts)
+            highlights = try container.decode([String:Highlighted].self, forKey: .highlights)
         } catch {
-            highlightedTexts = [:]
+            highlights = [:]
         }
+        
+//        do {
+//            try consensus = try container.decode([Float, Int].self, forKey: .consensus)
+//        } catch {
+//            consensus = [:]
+//        }
     
     }
     
@@ -166,19 +180,21 @@ struct Text: Codable {
         case body
         case theme
         
-        case highlightedTexts
+        case highlights
     }
 }
 
 struct Highlighted: Codable {
     var id: String
-    var text: String // "Muito importante analisarmos que..."
-    var color: String // #cccccc
+//    var text: String // "Muito importante analisarmos que..."
+//    var color: String // #cccccc
+    var body: [Int]
     
     init (text: String, color: String) {
         self.id = NanoID.new(alphabet: .uppercasedLatinLetters, size: 5)
-        self.text = text
-        self.color = color
+//        self.text = text
+//        self.color = color
+        body = []
     }
     
 }
@@ -191,4 +207,15 @@ struct CustomUser: Codable {
         self.name = firebaseUser.displayName!
         self.id = firebaseUser.uid
     }
+}
+
+struct GlobalConsensus: Codable {
+    var entryId: String
+    var entryValue: Float
+    
+    init (entryId: String, entryValue: Float) {
+        self.entryId = entryId
+        self.entryValue = entryValue
+    }
+    
 }

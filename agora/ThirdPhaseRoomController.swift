@@ -27,7 +27,7 @@ class ThirdPhaseRoomController: UIViewController {
         }) { classroom in
             guard let highlighted = classroom.highlightedText else { return }
             
-            self.fragment.text = highlighted.text
+//            self.fragment.text = highlighted.text
         }
         
         
