@@ -96,7 +96,7 @@ class FirebaseHelper {
                           onError: @escaping (String) -> (),
                           onSuccess: @escaping (Classroom) -> ()) {
         
-        dbReference.child(roomId).child("stage").observeSingleEvent(of: .value) { snapshot in
+        dbReference.child(roomId).child("stage").observe(.value) { snapshot in
             
             guard let value = snapshot.value else {
                 return
