@@ -728,11 +728,12 @@
                         <outlet property="code" destination="lNZ-tr-cek" id="agy-lX-9Pr"/>
                         <segue destination="zQb-XP-iUd" kind="showDetail" identifier="joinasteachersegue" id="K4v-P7-6p0"/>
                         <segue destination="PGJ-Mf-eG5" kind="showDetail" identifier="joinasstudentsegue" id="ROj-U5-HAd"/>
+                        <segue destination="hFh-x5-rDj" kind="showDetail" identifier="showclassroom" id="C0r-Tf-XZq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBE-F8-qiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239.19999999999999" y="447.52623688155927"/>
+            <point key="canvasLocation" x="-239" y="448"/>
         </scene>
         <!--Create Room View Controller-->
         <scene sceneID="G72-hm-lkA">
@@ -1356,4 +1357,7 @@
     <resources>
         <image name="copyIcon" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="C0r-Tf-XZq"/>
+    </inferredMetricsTieBreakers>
 </document>

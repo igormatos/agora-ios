@@ -39,7 +39,17 @@ class UserViewController: AgoraViewController {
             self.showAlert(title: "Erro ao conectar a sala", message: error)
         }) { classroom in
             AppSingleton.shared().loggedRoom = classroom
-            self.performSegue(withIdentifier: "joinasstudentsegue", sender: self)
+            
+            guard let userId = AppSingleton.shared().loggedUser?.uid else {
+                return
+            }
+            
+            if classroom.authorId == userId {
+                self.performSegue(withIdentifier: "showclassroom", sender: self)
+            } else {
+                self.performSegue(withIdentifier: "joinasstudentsegue", sender: self)
+            }
+            
         }
         
     }
