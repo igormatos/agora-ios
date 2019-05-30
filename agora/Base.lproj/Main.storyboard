@@ -659,6 +659,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="45"/>
                                 <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
+                                <connections>
+                                    <action selector="clickOnReturn:" destination="hjc-gV-OH9" eventType="editingDidEndOnExit" id="YlZ-w7-opb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se conecte a uma sala:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm1-29-glc">
                                 <rect key="frame" x="0.0" y="182" width="375" height="28.5"/>

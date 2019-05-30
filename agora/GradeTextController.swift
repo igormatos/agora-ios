@@ -10,19 +10,18 @@ class GradeTextController: UIViewController {
     @IBOutlet var textBody: UITextView!
     @IBOutlet var colorSwitch: UIButton!
     var texts: [Text]!
-    var index = 1
+    var index = 0
     
     @IBAction func next(_ sender: UIButton) {
         
+        sendHighlighted()
+        index += 1
         
         if index >= texts.count {
             performSegue(withIdentifier: "debatesegue", sender: self)
         } else {
-            // Pega o proximo texto
-            sendHighlighted()
             textBody.text = texts[index].body
             textTitle.text = texts[index].theme
-            index += 1
             //
             
             setToTestText()
@@ -47,7 +46,11 @@ class GradeTextController: UIViewController {
                     AppSingleton.shared().loggedRoom = classroom
                 
                     print(classroom.texts)
-                    self.texts = classroom.texts.values.shuffled()
+                
+                self.texts = classroom.texts.values.shuffled().filter({ text -> Bool in
+                    guard let userId = AppSingleton.shared().loggedUser?.uid else {return false}
+                    return text.authorId != userId
+                })
                     self.textBody.isScrollEnabled = false
                     // Coloca info do primeiro texto recebido
                     self.textBody.text = self.texts[0].body
@@ -72,10 +75,11 @@ class GradeTextController: UIViewController {
     
     func getColorArrayToSend(_ attributedString: NSAttributedString) -> [Int] {
         let words = attributedString.string.components(separatedBy: CharacterSet.init(charactersIn: " ,;;:.!?")).filter({(string) in string != ""})
-        
         var colors: [Int] = []
         for i in 0..<attributedString.string.count {
+//        for i in 0..<words.count {
             var key = 0
+            
             if let color = attributedString.attributes(at: i, effectiveRange: nil)[NSAttributedString.Key.backgroundColor] as? UIColor {
                 if color == redMarker {key = -1}
                 else if color == greenMarker {key = 1}
@@ -87,9 +91,9 @@ class GradeTextController: UIViewController {
         var colorsByWord: [Int] = []
         for word in words {
             colorsByWord.append(colors[i])
-            i += word.count
+            i += word.count + 1
         }
-        return colors
+        return colorsByWord
     }
     
     func sendHighlighted() {

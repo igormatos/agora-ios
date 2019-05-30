@@ -46,7 +46,7 @@ class UserViewController: AgoraViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        code.becomeFirstResponder()
+//        code.becomeFirstResponder()
         
         if let stage = AppSingleton.shared().loggedRoom?.stage {
             switch stage {

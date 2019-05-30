@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteTextController: AgoraViewController {
+class WriteTextController: AgoraViewController, UITextViewDelegate {
     var code: String!
     
     @IBOutlet var themeTextView: UITextView!
@@ -38,6 +38,7 @@ class WriteTextController: AgoraViewController {
         guard let theme = AppSingleton.shared().loggedRoom?.theme else { return }
         
         themeTextView.text = theme
+        bodyTextView.delegate = self
     }
     
 
@@ -45,6 +46,14 @@ class WriteTextController: AgoraViewController {
         if let room = segue.destination as? SecondPhaseViewController {
             room.code = code
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 
 }
