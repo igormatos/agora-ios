@@ -1056,7 +1056,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.13725490200000001" green="0.1176470588" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="30"/>
-                                <state key="normal" title="ENTREGAS">
+                                <state key="normal" title="CONSENSO">
                                     <color key="titleColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -1076,13 +1076,57 @@
                                 <color key="textColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sTY-mu-uiT">
+                                <rect key="frame" x="0.0" y="147" width="375" height="353"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" id="ZZT-ug-UyG" customClass="TableViewCell" customModule="agora" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZZT-ug-UyG" id="O3y-Dw-y6e">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do aluno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2x-4Q-n3U">
+                                                    <rect key="frame" x="15" y="11" width="116" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não entregou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-Ib-Txk">
+                                                    <rect key="frame" x="245" y="11" width="105" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a2x-4Q-n3U" firstAttribute="leading" secondItem="O3y-Dw-y6e" secondAttribute="leading" constant="15" id="EiY-FZ-Rzu"/>
+                                                <constraint firstItem="a2x-4Q-n3U" firstAttribute="top" secondItem="O3y-Dw-y6e" secondAttribute="top" constant="11" id="bbP-J1-Wca"/>
+                                                <constraint firstAttribute="trailing" secondItem="1fr-Ib-Txk" secondAttribute="trailing" constant="25" id="sOY-md-syG"/>
+                                                <constraint firstItem="1fr-Ib-Txk" firstAttribute="top" secondItem="O3y-Dw-y6e" secondAttribute="top" constant="11" id="yxM-x7-K7Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="a2x-4Q-n3U" id="voa-mB-hCl"/>
+                                            <outlet property="rightLabel" destination="1fr-Ib-Txk" id="8tD-cq-rfn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.96078431369999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sTY-mu-uiT" firstAttribute="trailing" secondItem="qex-ke-Odz" secondAttribute="trailing" id="CkU-dK-R0l"/>
+                            <constraint firstItem="sTY-mu-uiT" firstAttribute="centerX" secondItem="NjJ-L7-Npm" secondAttribute="centerX" id="Dxh-yI-ElL"/>
+                            <constraint firstItem="sTY-mu-uiT" firstAttribute="leading" secondItem="qex-ke-Odz" secondAttribute="leading" id="NIo-Vu-S1C"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qex-ke-Odz"/>
                     </view>
                     <connections>
                         <outlet property="clasroomName" destination="dyN-el-RcZ" id="RvP-x0-yub"/>
                         <outlet property="peopleCountLabel" destination="EpP-mi-1jH" id="Zmu-qX-4uN"/>
+                        <outlet property="tableView" destination="sTY-mu-uiT" id="4zt-yU-oXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvb-Yg-iqS" userLabel="First Responder" sceneMemberID="firstResponder"/>

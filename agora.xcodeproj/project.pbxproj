@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FBC33F8229FCFCA00116057 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC33F7229FCFCA00116057 /* TableViewCell.swift */; };
 		4FC810D0229B11AD00AEAE1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */; };
 		4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BD229B163400381229 /* AgoraViewController.swift */; };
 		4FE086C0229B22F400381229 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE086BF229B22F400381229 /* CreateRoomViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FBC33F7229FCFCA00116057 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4FC810CF229B11AD00AEAE1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FE086BD229B163400381229 /* AgoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraViewController.swift; sourceTree = "<group>"; };
 		4FE086BF229B22F400381229 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4FBC33F6229FCF8600116057 /* table */ = {
+			isa = PBXGroup;
+			children = (
+				4FBC33F7229FCFCA00116057 /* TableViewCell.swift */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
 		4FE9590D229B65C0006B232A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		AC0B983C2290F491008E8FCE /* agora */ = {
 			isa = PBXGroup;
 			children = (
+				4FBC33F6229FCF8600116057 /* table */,
 				4FE95912229B6B2D006B232A /* helpers */,
 				4FE9590D229B65C0006B232A /* controllers */,
 				4FFDEFB2229B532300581083 /* models */,
@@ -342,6 +353,7 @@
 				ACF3BF342290F5E3002899D7 /* AppSingleton.swift in Sources */,
 				4FFDEFB4229B533200581083 /* Classroom.swift in Sources */,
 				4FE9590F229B65F0006B232A /* GetCodeViewController.swift in Sources */,
+				4FBC33F8229FCFCA00116057 /* TableViewCell.swift in Sources */,
 				800D2DC02293BD7200079DEC /* FirstPhaseRoomController.swift in Sources */,
 				4FE086BE229B163400381229 /* AgoraViewController.swift in Sources */,
 				4FE95911229B6A04006B232A /* ClassroomViewController.swift in Sources */,

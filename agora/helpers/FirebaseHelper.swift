@@ -47,6 +47,20 @@ class FirebaseHelper {
         }
     }
     
+    func getClassroomRealtime(id: String, onError: @escaping (String) -> (), onSuccess: @escaping (Classroom) -> () ) {
+        dbReference.child(id).observe(.value) { snapshot in
+            guard let value = snapshot.value else { return }
+            
+            do {
+                let model = try FirebaseDecoder().decode(Classroom.self, from: value)
+                onSuccess(model)
+            } catch let error {
+                onError(error.localizedDescription)
+            }
+            
+        }
+    }
+    
     func join(user: CustomUser, onClassroom id: String, onError: @escaping (String) -> (), onSuccess: @escaping (Classroom) -> () ) {
         let roomReference = dbReference.child(id)
         let userData = try! FirebaseEncoder().encode(user)
